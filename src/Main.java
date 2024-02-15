@@ -3,29 +3,28 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
+        Person person1 = new Person("Nurmuhammed", "Akimbekov", LocalDate.of(1999, 8, 28));
+        Person person2 = new Person("Nurkyz", "Zikirdinova", LocalDate.of(2004, 7, 4));
+        Person person3 = new Person("Sultan", "Isaev", LocalDate.of(2002, 7, 20));
+        Person person4 = new Person("Bektur", "Temirbekov", LocalDate.of(1991, 8, 12));
+        Person[] peopleJava = {person1, person2};
+        Person[] peopleJs = {person3, person4};
 
-//        Bez parametr
-        Student student1 = new Student();
-        student1.name = "Beknazar";
-        student1.dateOfBirth = LocalDate.of(2007,06,05);
-        student1.phoneNumber = "708665544";
-        student1.nationality = "kyrgyz";
-//        Bez parametr
-        Student student2 = new Student();
-        student2.name ="Sabina";
-       student2.dateOfBirth = LocalDate.of(2004,06,05);
-       student2.phoneNumber = "706554433";
-       student2.nationality = "kyrgyz";
+        Mentor mentor1 = new Mentor("Aizat", LocalDate.of(2003, 3, 13), "Java mentor");
+        Mentor mentor2 = new Mentor("Ulan", LocalDate.of(1995, 4, 3), "Java mentor");
+        Mentor mentor3 = new Mentor("Elizar", LocalDate.of(1995, 4, 3), "JS mentor");
+        Mentor mentor4 = new Mentor();
+        mentor4.setName("");
+        Mentor[] mentorsJava= {mentor1, mentor2};
+        Mentor[] mentorsJs = {mentor3, mentor4};
 
-//       S parametr
-        Student student3 =  new Student("Nurkyz",LocalDate.of(2004,05,05),"70665544","kyrgyz");
-        Student student4 =  new Student("Kudaiberdi",LocalDate.of(2004,05,05),"70665544","kyrgyz");
-        Student student5 =  new Student("Yzaat",LocalDate.of(2004,05,05),"70665544","kyrgyz");
+        Group group1 = new Group("Java", LocalDate.of(2024, 1, 8), mentorsJava,peopleJava);
+        Group group2 = new Group("Js", LocalDate.of(2024, 1, 8), mentorsJs,peopleJs);
 
-        Student [] students = {student1,student2,student3,student4,student5};
-        for (Student student:students) {
-            System.out.println(student);
-            System.out.println(student.getAge());
-        }
+        Group [] groups = {group1,group2};
+
+        Company company = new Company("Peaksoft","Kyrgyzstan",LocalDate.of(2019,11,16),"Esen Niyazov",groups);
+
+        System.out.println(company);
     }
 }
